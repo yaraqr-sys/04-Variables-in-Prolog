@@ -1,0 +1,23 @@
+34 ?- consult(['c:/Users/yaraq/OneDrive/Desktop/AI/lab/lab4/task2.pl']).
+true.
+
+35 ?- female(X).
+X = sara ;
+X = nora.
+
+36 ?- male(_).
+true .
+
+37 ?- parent(Grandparent, Parent), parent(Parent, faisal).
+Grandparent = ali,
+Parent = muhammad .
+
+38 ?- parent(ahmad, Daughter), female(Daughter).
+Daughter = sara 
+Daughter = nora .
+
+39 ?- parent(Parent, ahmad), parent(Parent, muhammad).
+Parent = ali.
+
+40 ?- male(khan), parent(Parent, khan), parent(Parent, nora).
+Parent = ahmad.
