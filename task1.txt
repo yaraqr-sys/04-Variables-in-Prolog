@@ -1,0 +1,64 @@
+Welcome to SWI-Prolog (threaded, 64 bits, version 10.0.2)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+23 ?- house = house.
+true.
+
+24 ?- house = abc.
+false.
+
+25 ?- edge(a,b) = edge(C,b).
+C = a.
+
+26 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+
+27 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+
+28 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+
+29 ?- edge(A,A) = edge(b,c).
+false.
+
+30 ?- edge(A,A) = edge(b,b).
+A = b.
+
+31 ?- A = B, B = f.
+A = B, B = f.
+
+32 ?- A = B, B = f, A = e.
+false.
+
+
+Explanations:
+
+23. Both terms are exactly the same, so they unify.
+
+24. house and abc are different atoms, so they cannot unify.
+
+25. C matches a, and b already matches b.
+
+26. C matches a and B matches d.
+
+27. C matches a and B matches d, so the two terms unify.
+
+28. A matches a and B matches f(g,h).
+
+29. A is used in both positions, so it would need to be both b and c. Since they are different, unification fails.
+
+30. A is used in both positions and both values are b, so A = b.
+
+31. A and B are linked together. When B becomes f, A has the same value.
+
+32. A and B are linked to f, so A cannot also be e.
+
+
